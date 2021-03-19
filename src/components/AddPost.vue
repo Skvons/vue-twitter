@@ -38,7 +38,6 @@ export default {
     },
 
     onSubmit() {
-      // console.log(document.querySelector("#submitButton"));
       if (this.text.trim()) {
         const newPost = {
           comments: 0,
@@ -56,7 +55,6 @@ export default {
 </script>
 <style >
 .form {
-  /* border-radius: 1rem; */
   border: 0.1rem black solid;
   border-color: var(--border-color);
   padding: 2rem;

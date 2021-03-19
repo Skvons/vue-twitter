@@ -42,8 +42,6 @@ export default {
   height: 2rem;
   width: 2rem;
   border-radius: 1rem;
-  /* border: 0.2rem black solid; */
-  /* border-color: var(--border-color); */
   padding: 0.5rem;
   background-color: var(--button-color);
 }

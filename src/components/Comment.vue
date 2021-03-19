@@ -28,7 +28,6 @@ export default {
     },
   },
   mounted() {
-    // console.log(this.postId);
     this.$emit("com-counter", this.postId);
   },
   methods: {
@@ -80,8 +79,4 @@ export default {
 .avatar:hover + .popup {
   display: block;
 }
-/* 
-.avatar:hover {
-  width: 150px;
-} */
 </style>

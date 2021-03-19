@@ -30,9 +30,6 @@ export default {
     countCom(id) {
       this.$emit("com-counter", id);
     },
-    // genCom(id, count) {
-    //   this.$emit("gen-com", id, count);
-    // },
   },
 };
 </script>

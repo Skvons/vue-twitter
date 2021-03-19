@@ -52,35 +52,6 @@ export default {
     comCounter(id) {
       this.posts[id].comments++;
     },
-    genCom(id, count) {
-      // this.posts[id].comments = [];
-      // this.posts[id].comments = count;
-      // for (let i = 0; i < 3; i++) {
-      //   //
-      //   // setTimeout(
-      //   let user = this.getRandomInt(0, 3);
-      //   console.log(user);
-      //   this.posts[id].comments.push({
-      //     id: `${id}${i}`,
-      //     name: this.users[user].name,
-      //     photo: this.users[user].photo,
-      //     text: this.loremIpsum(),
-      //   });
-      //   // this.getRandomInt(1000, 3000));
-    },
-    getRandomInt(min, max) {
-      min = Math.ceil(min);
-      max = Math.floor(max);
-      return Math.floor(Math.random() * (max - min)) + min;
-    },
-    loremIpsum() {
-      let ipsum = "";
-      for (let i = 0; i < this.getRandomInt(10, 50); i++) {
-        ipsum = ipsum + `${this.lorem[this.getRandomInt(0, 31)]} `;
-      }
-      ipsum = ipsum[0].toUpperCase() + ipsum.slice(1);
-      return ipsum;
-    },
     storageClear() {
       localStorage.clear();
       this.posts = [];
