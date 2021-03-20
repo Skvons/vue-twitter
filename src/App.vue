@@ -11,8 +11,13 @@
         <div class="empty" v-if="posts.length < 1">
           <h1>Постов пока нет</h1>
         </div>
-        <button v-on:click="this.info">Инфо</button>
-        <button v-on:click="this.storageClear">Очистить</button>
+        <button
+          v-if="posts.length > 0"
+          class="clearButton"
+          v-on:click="this.storageClear"
+        >
+          Очистить
+        </button>
       </div>
       <div class="chart-wrapper">
         <Chart v-bind:posts="posts">
@@ -56,10 +61,6 @@ export default {
       localStorage.clear();
       this.posts = [];
     },
-    info() {
-      console.log(localStorage);
-      console.log(JSON.parse(localStorage.getItem("posts")).length);
-    },
     addPost(post) {
       this.posts.push(post);
       localStorage.setItem("posts", JSON.stringify(this.posts));
@@ -92,6 +93,11 @@ button {
 button:hover {
   background-color: var(--hover-color);
 }
+
+.clearButton {
+  margin: 1rem;
+}
+
 .empty {
   color: var(--font-color);
 }

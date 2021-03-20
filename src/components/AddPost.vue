@@ -44,7 +44,13 @@ export default {
           photo: this.getImg(),
           id: this.setId(),
           text: this.getText(),
-          date: newDate.toDateString("ru"),
+          date: newDate.toLocaleString("ru", {
+            hour: "2-digit",
+            minute: "2-digit",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          }),
         };
         this.$emit("add-post", newPost);
       }

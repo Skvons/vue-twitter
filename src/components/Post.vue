@@ -8,8 +8,8 @@
         />
       </div>
       <div class="name">
-        <span><b>You</b></span>
-        <span class="date">at {{ post.date }}</span>
+        <span><b>Вы</b></span>
+        <span class="date">{{ post.date }}</span>
       </div>
     </div>
 
@@ -51,6 +51,21 @@ export default {
           name: "Guccu Dima",
           photo:
             "https://images.unsplash.com/photo-1497551060073-4c5ab6435f12?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=667&q=80",
+        },
+        {
+          name: "Akira Yamaoko",
+          photo:
+            "https://images.unsplash.com/photo-1544168190-79c17527004f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=634&q=80",
+        },
+        {
+          name: "Senna Berger",
+          photo:
+            "https://images.unsplash.com/photo-1505136022555-39704db312fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80",
+        },
+        {
+          name: "Felix Gjelberg",
+          photo:
+            "https://images.unsplash.com/photo-1496360166961-10a51d5f367a?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
         },
       ],
       lorem: [
@@ -99,7 +114,7 @@ export default {
     Comment,
   },
   mounted() {
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < this.getRandomInt(1, 3); i++) {
       this.getCom();
       this.$forceUpdate;
       this.$emit("gen-com", this.post.id, this.comments.length);
@@ -133,7 +148,7 @@ export default {
           photo: this.users[user].photo,
           text: this.loremIpsum(),
         });
-      }, this.getRandomInt(1000, 3000));
+      }, this.getRandomInt(5000, 30000));
     },
   },
 };
@@ -145,8 +160,6 @@ export default {
 <style >
 .comments {
   padding-top: 1rem;
-  border-top: 0.1rem black solid;
-  border-color: var(--border-color);
 }
 .date {
   font-size: 0.8rem;
@@ -182,9 +195,11 @@ export default {
 .comment__title {
   text-align: left;
   margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 0.1rem black solid;
+  border-color: var(--border-color);
 }
 .title {
-  margin-bottom: 3rem;
   color: var(--font-color);
   font-size: 1.5rem;
   text-align: left;
